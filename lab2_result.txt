@@ -1,0 +1,49 @@
+.:
+total 8
+drw-r--r-- 2 boslabs boslabs 4096 Sep 17 14:42 dir
+-r--r----- 1 root    boslabs    5 Sep 17 14:37 file
+-rw------- 1 boslabs boslabs    0 Sep 17 15:09 file1
+-rw-rw-rw- 1 boslabs boslabs    0 Sep 17 15:11 file2
+-rw-rw-rw- 1 boslabs boslabs    0 Sep 17 15:17 lab2_result.txt
+
+./dir:
+ls: cannot access './dir/new_file': Permission denied
+total 0
+-????????? ? ? ? ?            ? new_file
+    1  clear
+    2  mkdir test
+    3  cd test
+    4  touch file
+    5  chmod 000 file
+    6  echo test > file
+    7  cat file
+    8  chmod 200 file
+    9  ls -al
+   10  echo test > file
+   11  cat file
+   12  chmod 240 file
+   13  ls -l
+   14  chmod 640 file
+   15  ls -l
+   16  cat file
+   17  mkdir dir
+   18  touch dir/new_file
+   19  echo "file 2" dir/new_file 
+   20  ls dir
+   21  chmod a-x dir
+   22  cat dir/new_file 
+   23  rm dir/new_file 
+   24  chown root:root file
+   25  ls -l
+   26  chown root file
+   27  chgrp root file
+   28  umask 077
+   29  touch file1
+   30  ls -l
+   31  umask 000
+   32  touch file2
+   33  cat file
+   34  cat file
+   35  ls -lR > lab2_result.txt
+   36  ls -lR &> lab2_result.txt
+   37  history >> lab2_result.txt 
